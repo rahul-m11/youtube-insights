@@ -1,25 +1,18 @@
 import streamlit as st
 import google.generativeai as genai
 
-# -------------------------------
-# ✅ 1. Gemini API Configuration
-# -------------------------------
-API_KEY = "AIzaSyANazzuCzpuxWsmV8ojZtayjEuqSSwYK38"  # 🔴 Replace with your Gemini API Key
+
+API_KEY = "AIzaSyANazzuCzpuxWsmV8ojZtayjEuqSSwYK38"  #  Replace with your Gemini API Key
 genai.configure(api_key=API_KEY)
 model = genai.GenerativeModel("gemini-2.5-pro")
 
-# -------------------------------
-# ✅ 2. Streamlit UI
-# -------------------------------
 st.set_page_config(page_title="YouTube Channel Insights (Gemini)", page_icon="📊", layout="wide")
 st.title("📊 Advanced YouTube Channel Insights")
 st.write("Enter a YouTube Channel URL to get detailed analytics powered by **Gemini AI**.")
 
 channel_url = st.text_input("🔗 Enter YouTube Channel URL:", placeholder="https://www.youtube.com/@Google")
 
-# -------------------------------
-# ✅ 3. Function to Generate Insights via Gemini
-# -------------------------------
+
 def analyze_channel_with_gemini(channel_url):
     prompt = f"""
     You are an advanced YouTube analytics expert.
@@ -42,9 +35,6 @@ def analyze_channel_with_gemini(channel_url):
     except Exception as e:
         return f"❌ Error generating insights: {e}"
 
-# -------------------------------
-# ✅ 4. Run Analysis
-# -------------------------------
 if st.button("Analyze"):
     if not channel_url:
         st.warning("⚠️ Please enter a valid YouTube channel URL.")
@@ -52,3 +42,4 @@ if st.button("Analyze"):
         with st.spinner("Generating insights with Gemini..."):
             insights = analyze_channel_with_gemini(channel_url)
             st.markdown(insights)
+
