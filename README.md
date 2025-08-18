@@ -85,7 +85,7 @@ Replace this line:
 
 Python
 
-API_KEY = "AIzaSyANazzuCzpuxWsmV8ojZtayjEuqSSwYK38" #REPLACE WITH YOUR API
+API_KEY = "" #REPLACE WITH YOUR API
 With these lines at the top of your script:
 
 Python
