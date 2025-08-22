@@ -48,9 +48,7 @@ cd your-repository-name
 It's highly recommended to use a virtual environment to keep project dependencies isolated.
 
 On macOS/Linux:
-
 Bash
-
 python3 -m venv venv
 source venv/bin/activate
 On Windows:
